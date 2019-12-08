@@ -19,17 +19,19 @@ int main()
 	while (left <= right){
 			mid = (left + right) / 2;
 			if (key > num[mid]){
-				left = mid++;
+				left = mid+1;
 			}
 			else if (key < num[mid]){
-				right = mid--;
+				right = mid-1;
 			}
 			else{
 				printf("找到了,下标为： %d \n", mid);
 				break;
 			}
 	}
-	putchar('-1');
+	if (left >right){
+		printf("没找到：-1\n");
+	}
 	system("pause");
 	return 0;
 }
